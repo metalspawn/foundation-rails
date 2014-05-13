@@ -47,11 +47,10 @@
 
           var settings = target.data(self.attr_name(true) + '-init') || self.settings;
           
-          if(S(e.target).data(self.data_attr()) && settings.is_hover) {
-            self.closeall.call(self);
-          }
-          
-          if (settings.is_hover) self.open.apply(self, [dropdown, target]);
+          if (settings.is_hover) {
+						self.closeall.call(self);
+						self.open.apply(self, [dropdown, target]);
+					}
         })
         .on('mouseleave.fndtn.dropdown', '[' + this.attr_name() + '], [' + this.attr_name() + '-content]', function (e) {
           var $this = S(this);
